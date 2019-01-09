@@ -14,7 +14,7 @@ jQuery(document).ready(function ($) {
         setTimeout(function () {
             paragraph.text('Ready !');
             paragraph.css("opacity", 1);
-        }, 500);
+        }, 200);
     }
 
 
@@ -28,7 +28,7 @@ jQuery(document).ready(function ($) {
                 setTimeout(function () {
                     divLoad.remove();
 
-                }, 3000);
+                }, 1000);
             }
 
         }, 1000);

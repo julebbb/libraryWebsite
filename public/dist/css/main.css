@@ -78,11 +78,11 @@
 
 /*Transition element*/
  #divLoad {
-     transition: 2s linear;
+     transition: 0.25s linear;
  }
 
  .line {
-     transition: 1s linear;
+     transition: 0.25s linear;
  }
 
 /*Icon animations Logo*/
@@ -93,7 +93,7 @@
     transform: skew(7deg);
     right: 14px;
     animation: 3s infinite ease bookopen alternate;
-    transition: 1s ease;
+    transition: 0.5s ease;
     z-index: 8;
 }
 
