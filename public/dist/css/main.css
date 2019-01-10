@@ -4,9 +4,6 @@ body, html {
 
 body {
     background: lavender;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
 }
 
 html {
@@ -63,7 +60,7 @@ html {
 
 /*Container*/
 #divLoad {
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -205,6 +202,9 @@ html {
 
 .registerHeader .logo {
     margin: 10px;
+    width: 100%;
+
+    justify-content: center;
 }
 
 .logoLink {
@@ -235,6 +235,9 @@ html {
     background: lightgrey;
     overflow: hidden;
     box-shadow: 0px 2px 1px rgba(81, 45, 64, 0.5);
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .register h1 {
@@ -292,4 +295,50 @@ html {
 .register label {
     margin: 5px 0;
     color:rgb(81, 45, 64);
+}
+
+@media (min-width: 576px) {
+    .register form {
+        max-width: 400px;
+    }
+
+    .registerHeader {
+        margin: 0;
+    }
+
+    .registerHeader h2 {
+        font-size: 1.5rem;
+    }
+
+    .register h1 {
+        font-size: 1.7rem; 
+        margin: 2rem;
+    }
+
+    .register button {
+        padding: 1rem 3rem;
+        margin: 2rem auto;
+    }
+
+    .register input {
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .register form {
+            max-width: 600px;
+        }
+
+    }
+    
+    @media (min-width: 992px) {
+        
+        .register input {
+            padding: 0.8rem;
+        }
+
+        .register a {
+            margin-bottom: 0.5rem;
+        }
+    }
 }
