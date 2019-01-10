@@ -1,28 +1,90 @@
-body, html {
-    width: 100%;
-}
 
 body {
     background: lavender;
 }
 
-html {
-    height: 100vh;
+/*--------------------------------------------------
+----------------------------------------------------
+                    Repete action
+----------------------------------------------------
+--------------------------------------------------*/
+
+
+body,
+html,
+.registerHeader .logo,
+.logoLink,
+.register input,
+.registerHeader,
+.login input,
+.login,
+.login form {
+    width: 100%;
+}
+
+html, #divLoad {
+  height: 100vh;
+}
+
+.loading, .contentBooks {
+  width: 100px;
+  height: 100px;
+}
+
+html,
+#divLoad,
+.registerHeader, 
+.login, 
+.loginBody {
     display: flex;
 }
+
+#divLoad, .registerHeader .logo, .registerHeader, .login {
+  justify-content: center;
+}
+
+.registerHeader .row, #divLoad, .login {
+    align-items: center;
+}
+
+
+.fa-book-open, .logoBook1, .logoBook2, .logoBook3, .line  {
+  position: absolute;
+}
+
+/*Transition element*/
+ #divLoad, .line, .register a {
+     transition: 0.25s linear;
+ }
+
+  #divLoad p, .fa-book-open  {
+    transition: 0.5s linear;
+  }
+
+.loginHeader h2, .registerHeader h2 {
+     color: #411734;
+}
+
+.login button,
+.register button {
+    background: cornflowerblue;
+    color: lavender;
+}
+
+.register button:active, .login button:active {
+    background: lavender;
+    color: cornflowerblue;
+    border: 1px solid cornflowerblue;
+}
+
+
 /*==================================================
-                    Keyframes 
+                    Keyframes
 ===================================================*/
 
 @keyframes rotate {
-
-    from {
-        transform: rotate(90deg);
-    }
-
-    to {
-        transform: rotate(460deg);
-    }
+    from {transform: rotate(90deg);}
+    to {transform: rotate(460deg);}
 }
 
 @keyframes boing1 {
@@ -42,17 +104,10 @@ html {
 }
 
 @keyframes bookopen {
-    0% {
-        color: white;
-    }
-    50% {
-        color: lightsteelblue;
-    }
-    100% {
-        color: cadetblue;
-    }
+    0% {color: white;}
+    50% {color: lightsteelblue;}
+    100% {color: cadetblue;}
 }
-
 
 /*==================================================
                     Loading page
@@ -61,12 +116,8 @@ html {
 /*Container*/
 #divLoad {
     position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; 
+    flex-direction: column;
     width: 100vw;
-    height: 100vh;
     top: 0;
     left: 0;
     background: #411734;
@@ -80,26 +131,16 @@ html {
      background: #411734;
      z-index: 1;
      padding: 7px;
-     transition: 0.5s linear;
  }
 
-/*Transition element*/
- #divLoad {
-     transition: 0.25s linear;
- }
 
- .line {
-     transition: 0.25s linear;
- }
 
 /*Icon animations Logo*/
 .fa-book-open {
-    position: absolute;
     bottom: -4px;
     font-size: 55px;
     transform: skew(7deg);
     right: 14px;
-    transition: 0.5s ease;
     z-index: 8;
     color: lavender;
 }
@@ -109,7 +150,6 @@ html {
 }
 
 .logoBook1 {
-    position: absolute;
     top: 12px;
     left: 50px;
     font-size: 50px;
@@ -127,7 +167,6 @@ html {
 }
 
 .logoBook2 {
-    position: absolute;
     top: 12px;
     right: 0;
     animation-delay: 1s;
@@ -137,7 +176,6 @@ html {
 }
 
 .logoBook3 {
-    position: absolute;
     top: 0px;
     font-size: 48px;
     animation-delay: 1s;
@@ -148,9 +186,7 @@ html {
 
 .contentBooks {
     background: rgb(81, 45, 64);
-    width: 100px ;
     position: relative;
-    height: 102px;
     border-radius: 60px;
 }
 
@@ -158,7 +194,6 @@ html {
     height: 0;
     width: 2px;
     border-radius: 27px;
-    position: absolute;
     display: block;
     margin: auto;
     background: lavender;
@@ -168,8 +203,6 @@ html {
     border-top: 2px solid white;
     animation: 1s infinite linear rotate;
     border-radius: 100px;
-    width: 100px;
-    height: 100px;
 }
 
 /*==================================================
@@ -202,13 +235,9 @@ html {
 
 .registerHeader .logo {
     margin: 10px;
-    width: 100%;
-
-    justify-content: center;
 }
 
 .logoLink {
-    width: 100%;
     height: 100%;
     display: block;
     z-index: 200;
@@ -223,21 +252,13 @@ html {
 .registerHeader h2 {
     font-weight: bold;
     font-size: 1.3rem;
-    color: #411734;
 
-}
-
-.registerHeader .row {
-    align-items: center;
 }
 
 .registerHeader {
     background: lightgrey;
     overflow: hidden;
     box-shadow: 0px 2px 1px rgba(81, 45, 64, 0.5);
-    width: 100%;
-    display: flex;
-    justify-content: center;
 }
 
 .register h1 {
@@ -249,14 +270,10 @@ html {
 }
 
 .register input {
-    width: 100%;
-
     padding: 5px;
 }
 
 .register button {
-    background: cornflowerblue;
-    color: lavender;
     font-weight: bold;
     display: block;
     margin: 10px auto;
@@ -271,7 +288,6 @@ html {
     margin: auto;
     display: block;
     width: 5rem;
-    transition: 0.25s linear;
 }
 
 .register a:active {
@@ -280,11 +296,7 @@ html {
     background: rgb(81, 45, 64);
 }
 
-.register button:active {
-    background: lavender;
-    color: cornflowerblue;
-    border: 1px solid cornflowerblue;
-}
+
 
 .register form {
     max-width: 220px;
@@ -297,8 +309,63 @@ html {
     color:rgb(81, 45, 64);
 }
 
+/*==================================================
+                    Login page
+===================================================*/
+.loginBody {
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+.loginHeader .contentBooks {
+    margin: 0.5rem auto;
+}
+
+.login h1 {
+    text-align: center;
+    color: cornflowerblue;
+}
+
+.login {
+    flex-direction: column;
+    padding: 0 1.3rem;
+    margin: 0 auto;
+}
+
+.login input {
+    padding: 1.5rem;
+}
+
+.login button {
+    margin: auto;
+    display: block;
+}
+
+.login a {
+    align-self: flex-end;
+    margin-top: 1rem;
+    color: cadetblue;
+}
+
+
+
+
+/*#####################################################
+#######################################################
+
+                    MEDIA QUERIES
+                    
+#######################################################
+#######################################################*/
+
+
+
+
 @media (min-width: 576px) {
-    .register form {
+    .register form, .login {
         max-width: 400px;
     }
 
@@ -311,7 +378,7 @@ html {
     }
 
     .register h1 {
-        font-size: 1.7rem; 
+        font-size: 1.7rem;
         margin: 2rem;
     }
 
@@ -324,15 +391,16 @@ html {
         margin-bottom: 2rem;
     }
 
+
     @media (min-width: 768px) {
-        .register form {
+        .register form, .login {
             max-width: 600px;
         }
 
     }
-    
+
     @media (min-width: 992px) {
-        
+
         .register input {
             padding: 0.8rem;
         }

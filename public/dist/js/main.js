@@ -26,7 +26,7 @@ jQuery(document).ready(function ($) {
                 setTimeout(function () {
                     divLoad.remove();
 
-                }, 1000);
+                }, 800);
             }
 
         }, 1000);

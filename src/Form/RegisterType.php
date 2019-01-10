@@ -17,13 +17,13 @@ class RegisterType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, array(
-                'label' => "Entrer un nom :",
+                'label' => "Entrer un nom",
                 'attr' => array(
                     'placeholder' => "Nom"
                 )
             ))
             ->add('email', EmailType::class, array(
-                'label' => "Entrer un email :",
+                'label' => "Entrer un email",
                 'attr' => array(
                     'placeholder' => "Email"
                 )
@@ -35,8 +35,8 @@ class RegisterType extends AbstractType
                     'placeholder' => "Mot de passe"
                 )),
                 'required' => true,
-                'first_options' => array('label' => 'Entrer un mot de passe :'),
-                'second_options' => array('label' => 'Répéter le mot de passe :'),
+                'first_options' => array('label' => 'Entrer un mot de passe'),
+                'second_options' => array('label' => 'Répéter le mot de passe'),
             ));
     }
 
@@ -44,6 +44,9 @@ class RegisterType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Admin::class,
+            'translation_domain' => 'forms'
         ]);
+
+
     }
 }
