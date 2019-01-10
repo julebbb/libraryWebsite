@@ -9,21 +9,34 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class RegisterType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
-            ->add('email', EmailType::class)
+            ->add('name', TextType::class, array(
+                'label' => "Entrer un nom :",
+                'attr' => array(
+                    'placeholder' => "Nom"
+                )
+            ))
+            ->add('email', EmailType::class, array(
+                'label' => "Entrer un email :",
+                'attr' => array(
+                    'placeholder' => "Email"
+                )
+            ))
             ->add('password', RepeatedType::class, array(
                 'type' => PasswordType::class,
-                'invalid_message' => 'The password fields must match.',
-                'options' => array('attr' => array('class' => 'password-field')),
+                'invalid_message' => 'Les deux mot de passe ne sont pas identique.',
+                'options' => array('attr' => array('class' => 'password-field',
+                    'placeholder' => "Mot de passe"
+                )),
                 'required' => true,
-                'first_options' => array('label' => 'Password'),
-                'second_options' => array('label' => 'Repeat Password'),
+                'first_options' => array('label' => 'Entrer un mot de passe :'),
+                'second_options' => array('label' => 'Répéter le mot de passe :'),
             ));
     }
 

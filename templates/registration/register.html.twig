@@ -3,12 +3,28 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+<header class="registerHeader container">
+        <div class="logo row ">
+            <div class="contentBooks col-0" id="logo">
+                <a href="{{ path('login') }}" class="logoLink"></a>
+                <i class="fas fa-book-open logoBookOpen"></i>
+                <i class="fas fa-book logoBook1"></i>
+                <i class="fas fa-book logoBook2"></i>
+                <i class="fas fa-book logoBook3"></i>
+            </div>
+            <h2 class="col-8 text-center">Bienvenue au LibraryApp !</h2>
+        </div>
+</header>
+<main class="register container">
+    <h1>Inscription</h1>
 
     {{ form_start(form) }}
 
         {{ form_rest(form) }}
 
-        <button class="btn">Register</button>
+        <button class="btn">S'inscrire</button>
     {{ form_end(form) }}
+
+    <a href="login" class="btn">Retour</a>
+</main>
 {% endblock %}

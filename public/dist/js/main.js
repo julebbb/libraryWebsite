@@ -17,8 +17,6 @@ jQuery(document).ready(function ($) {
         }, 200);
     }
 
-
-
     if (line.css('height', '100vh')) {
         setTimeout(function () {
             line.css('width', '100vw');
@@ -34,4 +32,19 @@ jQuery(document).ready(function ($) {
         }, 1000);
 
     }
+
+    $('.logoLink').hover(function () {
+        $('.logoBook1').css("animation", "2s linear infinite boing1");
+        $('.logoBook2').css("animation", "2s linear infinite boing1");
+        $('.logoBook3').css("animation", "2s linear infinite boing2");
+        $('.logoBookOpen').css("animation", "3s infinite ease bookopen alternate")
+    });
+    $('.logoLink').mouseout(function () {
+        $('.logoBook1').css("animation", "");
+        $('.logoBook2').css("animation", "");
+        $('.logoBook3').css("animation", "");
+        $('.logoBookOpen').css("animation", "")
+
+    });
+    
 });
