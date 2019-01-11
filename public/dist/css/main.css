@@ -351,8 +351,10 @@ html,
     align-self: flex-end;
     margin-top: 1rem;
 }
-
-
+.index .buttonJumbotron {
+    display: flex;
+    justify-content: space-between;
+}
 
 
 /*#####################################################

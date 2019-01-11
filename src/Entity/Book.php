@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\Category;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\BookRepository")
@@ -42,13 +43,13 @@ class Book
     private $available;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\category", inversedBy="id_book", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Entity\Category", inversedBy="id_book", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\picture", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Entity\Picture", cascade={"persist", "remove"})
      */
     private $picture;
 
@@ -122,24 +123,24 @@ class Book
         return $this;
     }
 
-    public function getCategory(): ?category
+    public function getCategory(): ?Category
     {
         return $this->category;
     }
 
-    public function setCategory(category $category): self
+    public function setCategory(Category $category): self
     {
         $this->category = $category;
 
         return $this;
     }
 
-    public function getPicture(): ?picture
+    public function getPicture(): ?Picture
     {
         return $this->picture;
     }
 
-    public function setPicture(?picture $picture): self
+    public function setPicture(?Picture $picture): self
     {
         $this->picture = $picture;
 

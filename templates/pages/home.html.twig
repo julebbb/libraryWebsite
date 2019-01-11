@@ -1,8 +1,60 @@
 {% extends "base.html.twig" %}
 
-{% block title 'Bienvenue' %}
+{% block title  %} Bienvenue {{ app.user.name }} {% endblock %}
 
 {% block body %}
+
+<header>
+    <div class="logo row ">
+        <div class="contentBooks col-0" id="logo">
+            <a href="#" class="logoLink homeLink"></a>
+            <i class="fas fa-book-open logoBookOpen"></i>
+            <i class="fas fa-book logoBook1"></i>
+            <i class="fas fa-book logoBook2"></i>
+            <i class="fas fa-book logoBook3"></i>
+            <p class="text-center">Menu</p>
+        </div>
+    
+    </div>
+    <h1>Bienvenue {{ app.user.name }} !</h1>
+</header>
+<main class="index">
+
+
+<div class="jumbotron">
+    <h1 class="display-5 text-center">Tous les livres :</h1>
+
+    <div class="buttonJumbotron">
+        <button class="btn btn-secondary btnCategories">Choisir une catégorie (indisponible)</button>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Ajouter un livre</a>
+        </p>
+    </div>
+</div>
+{% for book in books %}
+    
+    {% for category in categories %}
+
+    <div class="card text-left">
+        {% for picture in pictures %}  
+    
+        {% if picture.src is not null %}
+            <img class="card-img-top" src="{{ picture.src }}" alt="{{ picture.alt }}">
+        {% endif %}
+
+        {% if picture.src is null %}
+            <img class="card-img-top" src="dist/img/default.jpg" alt="{{ picture.alt }}">
+        {% endif %}
+
+        {% endfor %}
+      <div class="card-body">
+        <h4 class="card-title">{{ book.title }}</h4>
+
+      </div>
+    </div>
+</main>
+    {% endfor %}
+{% endfor %}
 
 
 {% endblock %}

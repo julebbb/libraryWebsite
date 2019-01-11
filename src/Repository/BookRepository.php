@@ -19,6 +19,12 @@ class BookRepository extends ServiceEntityRepository
         parent::__construct($registry, Book::class);
     }
 
+
+    public function findAllVisible() {
+        return $this->createQueryBuilder('b')
+            ->getQuery()
+            ->getResult();
+    }
     // /**
     //  * @return Book[] Returns an array of Book objects
     //  */
