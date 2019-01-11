@@ -1,14 +1,26 @@
 
-body {
-    background: lavender;
-}
-
 /*--------------------------------------------------
 ----------------------------------------------------
                     Repete action
 ----------------------------------------------------
 --------------------------------------------------*/
 
+body, .register button:active, .login button:active {
+  background: lavender;
+}
+
+#divLoad, #divLoad p {
+  background: #411734;
+}
+
+.register a:active, .login button,
+.register button, .fa-book-open, .logoBook3, .register a:active {
+  color: lavender;
+}
+
+.logoBook1, .login a {
+  color: cadetblue;
+}
 
 body,
 html,
@@ -33,8 +45,8 @@ html, #divLoad {
 
 html,
 #divLoad,
-.registerHeader, 
-.login, 
+.registerHeader,
+.login,
 .loginBody {
     display: flex;
 }
@@ -68,15 +80,16 @@ html,
 .login button,
 .register button {
     background: cornflowerblue;
-    color: lavender;
 }
 
 .register button:active, .login button:active {
-    background: lavender;
     color: cornflowerblue;
     border: 1px solid cornflowerblue;
 }
 
+#divLoad, .loginBody, .login  {
+  flex-direction: column;
+}
 
 /*==================================================
                     Keyframes
@@ -116,11 +129,9 @@ html,
 /*Container*/
 #divLoad {
     position: fixed;
-    flex-direction: column;
     width: 100vw;
     top: 0;
     left: 0;
-    background: #411734;
     z-index: 120;
 }
 
@@ -128,7 +139,6 @@ html,
  #divLoad p {
      color: white;
      text-shadow: 0px 0px 3px white;
-     background: #411734;
      z-index: 1;
      padding: 7px;
  }
@@ -142,7 +152,6 @@ html,
     transform: skew(7deg);
     right: 14px;
     z-index: 8;
-    color: lavender;
 }
 
 .bookOpen {
@@ -155,7 +164,6 @@ html,
     font-size: 50px;
     left: 0;
     transform: rotate(-20deg);
-    color: cadetblue;
 }
 
 .book1, .book2 {
@@ -181,7 +189,6 @@ html,
     animation-delay: 1s;
     transform: rotate(-5deg);
     left: 30px;
-    color: lavender;
 }
 
 .contentBooks {
@@ -216,7 +223,6 @@ html,
 }
 
 .registerHeader .logoBook3 {
-    font-size: 35px;
     left: 25px;
 }
 
@@ -224,7 +230,7 @@ html,
     font-size: 30px;
 }
 
-.registerHeader .logoBook1 {
+.registerHeader .logoBook1, .registerHeader .logoBook3 {
     font-size: 35px;
 }
 
@@ -291,7 +297,6 @@ html,
 }
 
 .register a:active {
-    color: lavender;
     border: 1px solid lavender;
     background: rgb(81, 45, 64);
 }
@@ -313,7 +318,6 @@ html,
                     Login page
 ===================================================*/
 .loginBody {
-    flex-direction: column;
     justify-content: center;
     height: 100%;
     overflow: hidden;
@@ -330,7 +334,6 @@ html,
 }
 
 .login {
-    flex-direction: column;
     padding: 0 1.3rem;
     margin: 0 auto;
 }
@@ -347,7 +350,6 @@ html,
 .login a {
     align-self: flex-end;
     margin-top: 1rem;
-    color: cadetblue;
 }
 
 
@@ -357,7 +359,7 @@ html,
 #######################################################
 
                     MEDIA QUERIES
-                    
+
 #######################################################
 #######################################################*/
 
