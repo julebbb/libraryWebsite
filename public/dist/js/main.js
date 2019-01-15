@@ -53,78 +53,89 @@ jQuery(document).ready(function ($) {
 
     });
 
-    $('#logoLink').click(function() {
-
-        $(".navSite, .decorate").css({
-            "transform": "skew(0deg)",
-            "height": "20em",
-            "width": "100vw",
-            "left": "0",
-            "position": "fixed"
-        });
-
-        darkDiv.css('display', 'block');
-
-        $('.navList').css("display", "block");
-        $('#logo').css("margin", "auto");
-
-        logoDiv.addClass("col-12");
-        logoDiv.css({
-            "margin": "10px 0",
-            'position': 'fixed',
-        });
-        $('.close').css("display", "block");
-
-        setTimeout(function () {
-            $('.navList').css("opacity", "1");
-            $('.close').css("opacity", "1");
-
-        }, 1000);
-
-    });
-    $('.darkDiv, .close').click(function() {
-        navSite.css({
-            "transform": "skew(-44deg)",
-            "width": "300px",
-            "left": "-310px",
-            "position": "absolute"
-        });
-
-        blueBlock.css({
-            "transform": "skew(-51deg)",
-            "left": "-122px",
-            "width": "160px",
-            "height": "50vh",
-            "position": "absolute"
-        })
-        darkDiv.css('display', 'none');
-        $('.navList').css("opacity", "0");
-        $(".close").css("display", "none")
-        logoDiv.css({
-            "margin": "10px",
-            "position": "initial",
-            "opacity": "0"
-        });
-        $('.close').css("opacity", "0");
-        
-
-        setTimeout(function () {
-            $('.navList').css("display", "none");
-            logoDiv.removeClass("col-12");
-            logoDiv.css("opacity", "1");
-            
-        }, 1000);
-    });
-
-    $(window).scroll(function() {
-        
-        let scroll = window.scrollY;
-
-        if (scroll > 300) {
-            $(".on_top").css("display", "flex");
-        } else {
-            $(".on_top").css("display", "none");
-        }
-    });
     
+    if (window.innerWidth < 992) {
+        
+    
+        $('#logoLink').click(function() {
+
+            $(".navSite, .decorate").css({
+                "transform": "skew(0deg)",
+                "height": "20em",
+                "width": "100vw",
+                "left": "0",
+                "position": "fixed",
+            });
+            $('.headerIndex').css("align-items", "baseline");
+
+
+
+            darkDiv.css('display', 'block');
+
+            $('.navList').css("display", "block");
+            $('#logo').css("margin", "auto");
+
+            logoDiv.addClass("col-12");
+            logoDiv.css({
+                "margin": "10px 0",
+                'position': 'fixed',
+            });
+            $('.close').css("display", "block");
+
+            setTimeout(function () {
+                $('.navList').css("opacity", "1");
+                $('.close').css("opacity", "1");
+
+            }, 1000);
+
+        });
+        $('.darkDiv, .close').click(function() {
+            navSite.css({
+                "transform": "skew(-44deg)",
+                "width": "320px",
+                "left": "-235px",
+                "position": "absolute",
+
+            });
+
+                
+            $('.headerIndex').css("align-items", "center");
+            blueBlock.css({
+                "transform": "skew(-51deg)",
+                "left": "-35px",
+                "width": "160px",
+                "height": "50vh",
+                "position": "absolute"
+            })
+            darkDiv.css('display', 'none');
+            $('.navList').css("opacity", "0");
+            $(".close").css("display", "none")
+            logoDiv.css({
+                "margin": "10px",
+                "position": "initial",
+                "opacity": "0"
+            });
+            $('.close').css("opacity", "0");
+            
+
+            setTimeout(function () {
+                $('.navList').css("display", "none");
+                logoDiv.removeClass("col-12");
+                logoDiv.css("opacity", "1");
+                
+            }, 1000);
+        });
+
+        $(window).scroll(function() {
+            
+            let scroll = window.scrollY;
+
+            if (scroll > 300) {
+                $(".on_top").css("display", "flex");
+            } else {
+                $(".on_top").css("display", "none");
+            }
+        });
+    
+}
 });
