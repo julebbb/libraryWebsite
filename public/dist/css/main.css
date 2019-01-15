@@ -122,6 +122,10 @@ html,
     100% {color: cadetblue;}
 }
 
+@keyframes onTop {
+    from { bottom: 1em;}
+    to { bottom: 2em;}
+}
 /*==================================================
                     Loading page
 ===================================================*/
@@ -217,29 +221,34 @@ html,
 ===================================================*/
 
 /*-------------  Logo  ---------------*/
-.registerHeader .contentBooks {
+.registerHeader .contentBooks, .headerIndex .contentBooks {
     width: 80px;
     height: 80px;
+    z-index: 3;
 }
 
-.registerHeader .logoBook3 {
+.registerHeader .logoBook3, .headerIndex .logoBook3 {
     left: 25px;
 }
 
-.registerHeader .logoBook2 {
+.registerHeader .logoBook2, .headerIndex .logoBook2 {
     font-size: 30px;
 }
 
-.registerHeader .logoBook1, .registerHeader .logoBook3 {
+.registerHeader .logoBook1,
+.registerHeader .logoBook3,
+.headerIndex .logoBook3,
+.headerIndex .logoBook1 {
     font-size: 35px;
 }
 
-.registerHeader .logoBookOpen {
+.registerHeader .logoBookOpen,
+.headerIndex .logoBookOpen {
     font-size: 40px;
 }
 
 
-.registerHeader .logo {
+.registerHeader .logo, .headerIndex .logo {
     margin: 10px;
 }
 
@@ -262,7 +271,7 @@ html,
 }
 
 .registerHeader {
-    background: lightgrey;
+    background: cornflowerblue;
     overflow: hidden;
     box-shadow: 0px 2px 1px rgba(81, 45, 64, 0.5);
 }
@@ -351,9 +360,173 @@ html,
     align-self: flex-end;
     margin-top: 1rem;
 }
+
+/*==================================================
+                    Index page
+===================================================*/
+
+
 .index .buttonJumbotron {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.headerIndex {
+    display: flex;
+    align-items: baseline;
+    transition: ease 1s;
+    overflow: hidden;
+}
+
+.headerIndex .logoLink {
+    height: 130%;
+    transition: ease 1s;
+
+}
+
+.headerIndex .logo {
+    flex-direction: column;
+    transition: ease 1s;
+    z-index: 5;
+
+}
+
+.headerIndex .logo p {
+    font-weight: bold;
+    color: rgb(81, 45, 64);
+    z-index: 60;
+}
+
+.headerIndex h3 {
+    text-align: center;
+    width: 100%;
+    font-size: 1.3rem;
+}
+
+.navSite{
+    width: 100vw;
+    height: 300px;
+    position: absolute;
+    left: -310px;
+    background: cornflowerblue;
+    transform: skew(-44deg);
+    z-index: 2;
+    transition: 1s ease;
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-end;
+}
+
+.navSite ul {
+    display: none;
+    opacity: 0;
+    transition: 1s ease;
+    text-align: center;
+    width: 100%;
+    padding: 0 2em;
+    list-style: none;
+}
+
+.navSite li:first-child {
+    border-bottom: 1px solid lavender;
+}
+
+.navSite li {
+    color: lavender;
+}
+
+.navSite li a {
+    color: lavender;
+    width: 100%;
+    display: block;
+    padding: 1em;
+    transition: 0.25s linear;
+    text-decoration: none;
+}
+
+.navSite li a:hover {
+    color: rgb(81, 45, 64);
+}
+.navSite li:nth-child(2) {
+    margin: 0 0 1em 0;
+}
+
+.navSite li:last-of-type a:last-of-type {
+    border: 1px solid lavender;
+    border-radius: 5px;
+    padding: 0.5em;
+    width: 12em;
+    margin: auto;
+}
+
+.navSite li:last-of-type a:last-of-type:hover {
+    border: 1px solid rgb(81, 45, 64);
+
+}
+
+.close {
+    position: absolute;
+    transition: 1s linear;
+    top: 1rem;
+    opacity: 0;
+    right: 1rem;
+
+    font-size: 2em;
+    display: none;
+    z-index: 1;
+}
+
+.on_top {
+    display: none;
+    position: fixed;
+    bottom: 1em;
+    width: 50px;
+    height: 50px;
+    color: black;
+    right: 7em;
+    background: cadetblue;
+    z-index: 20;
+    border-radius: 49px;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease;
+}
+
+.on_top:hover {
+    text-decoration: none;
+    animation: 0.5s linear alternate infinite onTop;
+} 
+
+.on_top .fas {
+    font-size: 2em; 
+    color: lavender;
+}
+
+.darkDiv {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.decorate {
+    position: absolute;
+
+    width: 160px;
+
+    height: 50vh;
+    transition: 1s ease;
+    background: rgb(145, 174, 212);
+
+    transform: skew(-51deg);
+
+    left: -122px;
 }
 
 
