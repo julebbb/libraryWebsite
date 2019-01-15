@@ -39,19 +39,20 @@
 
 <div class="jumbotron">
     <h1 class="display-5 text-center">Tous les livres :</h1>
-
+    <p class="label">Trier par catégorie :</p>
     <div class="buttonJumbotron">
-        <button class="btn btn-secondary btnCategories">Choisir une catégorie (indisponible)</button>
+        <button class="btn btnCategories">Catégories (indisponible)</button>
         <p class="lead">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Ajouter un livre</a>
+            <a class="btn " href="#" role="button">Ajouter</a>
         </p>
     </div>
 </div>
+<section class="bookSection row">
 {% for book in books %}
     
     {% for category in categories %}
 
-    <div class="card text-left">
+    <div class="card text-left col-12 col-sm-8">
         <a href="">
         {% for picture in pictures %}  
     
@@ -70,9 +71,9 @@
       </div>
       </a>
     </div>
-</main>
     {% endfor %}
 {% endfor %}
-
+</section>
+</main>
 
 {% endblock %}

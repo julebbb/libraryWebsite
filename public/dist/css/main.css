@@ -369,7 +369,7 @@ html,
 .index .buttonJumbotron {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .headerIndex {
@@ -528,7 +528,62 @@ html,
     left: -35px;
 }
 
+.jumbotron {
+    background: rgb(81, 45, 64);
+    color: lavender;
+    border-radius: 0;
+    box-shadow: 0px -2px 0px rgb(145, 174, 212);
+    margin: 0;
+}
 
+.jumbotron p,
+.jumbotron .btnCategories {
+    font-size: 0.8rem;
+    
+}
+
+.jumbotron .label {
+    margin: 20px 0 0 0;
+}
+
+.jumbotron h1 {
+    font-size: 2rem;
+}
+
+.jumbotron .btnCategories {
+    margin-right: 20px;
+    display: flex;
+    background: rgb(145, 174, 212);
+    color: rgb(81, 45, 64);
+    border: 2px solid rgb(81, 45, 64);
+    font-weight: bold;
+}
+
+
+
+.jumbotron .btnCategories::after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f150";
+    font-size: 1.5rem;
+    
+}
+
+  .lead a {
+      background: cornflowerblue;
+      border: 2px solid rgb(81, 45, 64);
+      color: lavender;
+      padding: 0.5rem 1.5rem;
+  }
+
+  .bookSection .card {
+      padding: 0;
+      word-break: break-all;
+  }
+
+  .bookSection {
+      margin: 0;
+      padding: 2em;
+  }
 /*#####################################################
 #######################################################
 
@@ -670,8 +725,15 @@ html,
 
         }
 
+        .jumbotron .btnCategories:hover, .lead a {
+            box-shadow: 0px 0px 10px rgb(81, 45, 64) inset;
+
+        }
+
+      
+
        
     }
 
 
-}
+
