@@ -18,7 +18,7 @@ body, .register button:active, .login button:active,
 .login button, .register button,
 .registerHeader, .navSite, .lead button,
 .bookSection .card, .modal-header,
-.modal-footer .btn:last-child {
+.modal-footer .btn:last-child, .btnEdit {
   background: cornflowerblue;
 }
 
@@ -35,15 +35,15 @@ body, .register button:active, .login button:active,
 .register button, .fa-book-open, .logoBook3,
 .register a:active, .navSite li, .navSite li a,
 .on_top .fas, .jumbotron, .lead button, .bookSection a,
-.modal-footer .btn:last-child {
+.modal-footer .btn:last-child, .btnEdit {
   color: lavender;
 }
 
-.logoBook1, .login a, .modal-footer .btn:first-child {
+.logoBook1, .login a, .modal-footer .btn:first-child, .showBook h3 {
   color: cadetblue;
 }
 
-.register button:active, .login button:active, .register h1, .login h1 {
+.register button:active, .login button:active, .register h1, .login h1, .showBook p {
   color: cornflowerblue;
 }
 
@@ -52,7 +52,7 @@ body, .register button:active, .login button:active,
 }
 
 .register a, .headerIndex .logo p, .navSite li a:hover,
-.jumbotron .btnCategories, .modal-content   {
+.jumbotron .btnCategories, .modal-content, body   {
   color: rgb(81, 45, 64);
 }
 
@@ -146,6 +146,8 @@ html, #divLoad, .registerHeader, .login,
 .register button:active, .login button:active {
     border: 1px solid cornflowerblue;
 }
+
+
 
 
 /*==================================================
@@ -555,7 +557,7 @@ html, #divLoad, .registerHeader, .login,
 
 }
 
-.lead button {
+.lead button, .btnEdit {
   border: 2px solid rgb(81, 45, 64);
   padding: 0.5rem 1.5rem;
 }
@@ -618,6 +620,40 @@ html, #divLoad, .registerHeader, .login,
   border: 1px solid lavender;
   padding: 0.8rem;
 }
+
+/*==================================================
+                    Book detail page
+===================================================*/
+.showBook {
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+}
+
+.showBook h1 {
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.showBook h3 {
+    font-size: 1em;
+}
+
+.showBook h3:last-of-type {
+    text-align: right;
+}
+
+.showBook .d-flex {
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid cadetblue;
+    padding-bottom: 1em;
+}
+
+.btn-danger {
+    padding: 0.5em 2em;
+}
+
 
 /*#####################################################
 #######################################################
@@ -686,7 +722,7 @@ html, #divLoad, .registerHeader, .login,
          font-size: 1em;
      }
 
-     .lead button {
+     .lead button, .btnEdit {
          font-size: 1.7em;
      }
 }
@@ -807,7 +843,7 @@ html, #divLoad, .registerHeader, .login,
 
     }
 
-    .jumbotron .btnCategories:hover, .lead button:hover {
+    .jumbotron .btnCategories:hover, .lead button:hover, .btnEdit:hover {
         box-shadow: 0px 0px 10px rgb(81, 45, 64) inset;
         color: rgb(81, 45, 64);
     }

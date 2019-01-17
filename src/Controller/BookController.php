@@ -8,14 +8,18 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\BookRepository;
+use App\Repository\UserRepository;
 use App\Form\BookType;
 use Doctrine\Common\Persistence\ObjectManager;
 use App\Entity\Picture;
+
 
 class BookController extends AbstractController
 {
 
     private $repository;
+
+    private $repositoryUser;
 
     /**
      * @var ObjectManager
@@ -24,11 +28,13 @@ class BookController extends AbstractController
 
     /**
      * @param BookRepository $repository
+     * @param UserRepository $repositoryUser
      * @param ObjectManager $em
      */
-    public function __construct(BookRepository $repository, ObjectManager $em)
+    public function __construct(BookRepository $repository, ObjectManager $em, UserRepository $repositoryUser)
     {
         $this->repository = $repository;
+        $this->repositoryUser = $repositoryUser;
         $this->em = $em;
     }
 
@@ -44,6 +50,8 @@ class BookController extends AbstractController
         $books = $this->repository->findAllVisible();
         $categories = [];
         $pictures = [];
+
+        $title = "index";
 
         //Show picture and category
         foreach ($books as $key => $value) {
@@ -87,18 +95,44 @@ class BookController extends AbstractController
             "form" => $form->createView(),
             'books' => $books,
             'pictures' => $pictures,
-            'categories' => $categories
+            'categories' => $categories,
+            'title' => $title,
         ]);
     }
 
 
     /**
-     * @Route("/{id}", name="book_show", methods={"GET"})
+     * @Route("/{id}", name="book_show", methods={"GET", "UPDATE"})
      */
-    public function show(Book $book): Response
+    public function show(Request $request, Book $book): Response
     {
+        $category = $book->getCategory();
+        $picture = $book->getPicture(); 
+        $user = $book->getIdUser();
+
+        $users = $this->repositoryUser->findAllVisible();
+
+        $title = "book";
+
+        $form = $this->createForm(BookType::class, $book);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('book_index', [
+                'id' => $book->getId(),
+            ]);
+        }
+
         return $this->render('book/show.html.twig', [
             'book' => $book,
+            'category' => $category,
+            'picture' => $picture,
+            'user' => $user,
+            'users' => $users,
+            'form' => $form->createView(),
+            'title' => $title,
         ]);
     }
 
@@ -123,6 +157,7 @@ class BookController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+    
 
     /**
      * @Route("/{id}", name="book_delete", methods={"DELETE"})
