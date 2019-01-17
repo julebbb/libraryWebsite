@@ -1,6 +1,6 @@
 home:
   path: /
-  controller: App\Controller\HomeController::index
+  controller: App\Controller\BookController::index
 
 #index:
 #    path: /

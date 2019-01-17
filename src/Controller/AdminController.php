@@ -18,6 +18,8 @@ class AdminController extends AbstractController
 {
     /**
      * @Route("/login", name="login")
+     * @param AuthenticationUtils $authenticationUtils
+     * @return Response
      */
     public function login(AuthenticationUtils $authenticationUtils) : Response
     {
@@ -34,6 +36,10 @@ class AdminController extends AbstractController
 
     /**
      * @Route("/register", name="register")
+     * @param Request $request
+     * @param UserPasswordEncoderInterface $passwordEncoder
+     * @param LoginFormAdminAuthenticator $authenticator
+     * @return Response
      */
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, LoginFormAdminAuthenticator $authenticator): Response
     {

@@ -60,7 +60,7 @@ body, .register button:active, .login button:active,
 body, html, .registerHeader .logo, .logoLink,
 .register input, .registerHeader, .login input,
 .login, .login form, .navSite ul, .navSite li a,
-.modal-dialog, .modal-dialog form,   {
+.modal-dialog, .modal-dialog form   {
     width: 100%;
 }
 
@@ -96,7 +96,7 @@ html, #divLoad, .darkDiv {
 
 /*__________MARGIN__________*/
 .line, .register a, .register form, .login button,
-.navSite li:last-of-type a:last-of-type, .modal-dialog,
+.navSite li:last-of-type a:last-of-type,
 .modal-dialog form .modal-title, .modal-dialog form   {
   margin: auto;
 }
@@ -640,6 +640,10 @@ html, #divLoad, .registerHeader, .login,
         margin: 0;
     }
 
+    .modal-dialog {
+        margin: auto;
+    }
+
     .registerHeader h2 {
         font-size: 1.5rem;
     }
@@ -676,6 +680,14 @@ html, #divLoad, .registerHeader, .login,
 
      .modal-dialog form .modal-title {
         padding: 0 1em;
+     }
+
+     .jumbotron .btnCategories {
+         font-size: 1em;
+     }
+
+     .lead button {
+         font-size: 1.7em;
      }
 }
 

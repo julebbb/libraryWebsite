@@ -4,33 +4,8 @@
 
 {% block body %}
 
-<header class="headerIndex">
-    
-    <div class="logo row ">
-        <div class="contentBooks col-0" id="logo">
-            <a href="#" class="logoLink homeLink" id="logoLink" ></a>
-            <i class="fas fa-book-open logoBookOpen"></i>
-            <i class="fas fa-book logoBook1"></i>
-            <i class="fas fa-book logoBook2"></i>
-            <i class="fas fa-book logoBook3"></i>
-        </div>
-        <p class="text-center">Menu</p>
-        <a href="#" class="close">&#10060;</a>
+{% include('pages/_header.html.twig') %}
 
-    
-    </div>
-    
-    <nav class="navSite">
-        <ul class="navList">
-            <li><a href="{{ path('home') }}" >Accueil</a></li>
-            <li><a href="#">Utilisateurs</a></li>
-            <li><a href="{{ path('logout') }}" >Se déconnecter</a></li>
-        </ul>
-    </nav>
-    <div class="decorate"></div>
-    <div class="darkDiv" title="retour"></div>
-    <h3 class="col-8 col-sm-12">Bienvenue {{ app.user.name }} !</h3>
-</header>
 <main class="index">
 
 <a href="#" class="on_top" title="Revenir en haut">
@@ -56,7 +31,8 @@
     {% for category in categories %}
 
     <div class="card cardBook text-left col-12 col-sm-6 col-md-3">
-        <a href="" class="linkBook">
+<a href="{{ path('book_show', {id: book.id}) }}" class="linkBook">
+    
         {% for picture in pictures %}  
     
         {% if picture.src is not null %}
