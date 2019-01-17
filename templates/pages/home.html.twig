@@ -43,17 +43,20 @@
     <div class="buttonJumbotron">
         <button class="btn btnCategories">Catégories (indisponible)</button>
         <p class="lead">
-            <a class="btn " href="#" role="button">Ajouter</a>
+        <button class="btn " data-target="#exampleModalCenter" data-toggle="modal" role="button" type="button">Ajouter</button>
         </p>
     </div>
 </div>
+
+{% include('pages/_form.book.html.twig') %}
+
 <section class="bookSection row">
 {% for book in books %}
     
     {% for category in categories %}
 
-    <div class="card text-left col-12 col-sm-8">
-        <a href="">
+    <div class="card cardBook text-left col-12 col-sm-6 col-md-3">
+        <a href="" class="linkBook">
         {% for picture in pictures %}  
     
         {% if picture.src is not null %}

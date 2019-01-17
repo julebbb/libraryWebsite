@@ -137,5 +137,12 @@ jQuery(document).ready(function ($) {
             }
         });
     
+} else {
+    $('.linkBook').hover(function() {
+        $('.cardBook').css("transform", "scale(0.98)")
+    });
+    $('.linkBook').mouseout(function() {
+        $('.cardBook').css("transform", "scale(1)")
+    });
 }
 });

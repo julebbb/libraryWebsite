@@ -126,6 +126,8 @@ html,
     from { bottom: 1em;}
     to { bottom: 2em;}
 }
+
+
 /*==================================================
                     Loading page
 ===================================================*/
@@ -568,7 +570,7 @@ html,
     
 }
 
-  .lead a {
+  .lead button {
       background: cornflowerblue;
       border: 2px solid rgb(81, 45, 64);
       color: lavender;
@@ -577,13 +579,104 @@ html,
 
   .bookSection .card {
       padding: 0;
-      word-break: break-all;
+      background: cornflowerblue;
+  }
+
+  .bookSection a {
+      color: lavender;
   }
 
   .bookSection {
       margin: 0;
       padding: 2em;
   }
+
+  .bookSection a:hover {
+      text-decoration: none;
+  }
+
+  .cardBook {
+      transition: 0.25s linear; 
+  }
+
+
+  .modal-dialog {
+      margin: 0;
+      width: 100%;
+      margin: auto;
+  }
+
+  .modal-dialog form {
+      width: 100%;
+      margin: auto;
+      max-width: 500px;
+  }
+
+  .modal-dialog form .modal-title {
+      margin: auto;
+      font-weight: bold;
+      font-size: 2rem;
+  }
+
+  .modal-dialog .modal-body div {
+      padding: 0.5em;
+  }
+
+    .modal-dialog .modal-body label {
+        margin: 0;
+    }
+
+    .modal-dialog .modal-body {
+        padding: 0 2rem;
+    }
+
+    .modal-body select {
+      
+        padding: 0.7em;
+    }
+
+    .modal-content {
+        background: lavender;
+        color: rgb(81, 45, 64);
+    }
+
+    .modal-header {
+        background: cornflowerblue;
+        border-bottom: 2px solid cadetblue;
+    }
+
+    .modal-body input[type='text'],
+    .modal-body select,
+    .modal-body textarea,
+    .modal-body input[type='date'] {
+        border-radius: 5px;
+          background: rgba(145, 174, 212, 0.2);
+          border: 1px solid rgb(145, 174, 212);
+    }
+    
+    .modal-body input, .modal-body textarea {
+        padding: 0.5em;
+    }
+
+    .modal-footer .btn:first-child {
+        background: lavender;
+        color: cadetblue;
+        border: 1px solid cadetblue;
+    }
+
+    .modal-footer .btn:last-child {
+        background: cornflowerblue;
+        color: lavender;
+        border: 1px solid lavender;
+        padding: 0.8rem;
+    }
+
+    .modal-footer {
+        justify-content: center;
+    }
+
+    
+  
 /*#####################################################
 #######################################################
 
@@ -628,7 +721,27 @@ html,
          z-index: 1;
          text-align: center;
          position: absolute;
-     }}
+     }
+     
+     .modal-dialog .modal-body {
+         padding: 0 3em;
+     }
+
+     .formDiv {
+         flex-wrap: nowrap;
+     }
+     
+     .modal-dialog form .modal-title {
+        padding: 0 1em;
+     }
+     }
+
+     @media (min-height: 638px) {
+         .modal-dialog  {
+             height: 100vh;
+         }
+     }
+
     @media (min-width: 768px) {
         .register form, .login {
             max-width: 600px;
@@ -643,6 +756,14 @@ html,
 
     .navSite li a {
         font-size: 1.1em;
+    }
+
+    .jumbotron .btnCategories {
+        font-size: 1.1em;
+    }
+
+    .jumbotron .label {
+        font-size: 1em;;
     }
 
     
@@ -725,9 +846,9 @@ html,
 
         }
 
-        .jumbotron .btnCategories:hover, .lead a {
+        .jumbotron .btnCategories:hover, .lead button:hover {
             box-shadow: 0px 0px 10px rgb(81, 45, 64) inset;
-
+            color: rgb(81, 45, 64);
         }
 
       
