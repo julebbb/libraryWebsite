@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+<div class="loginBody">
+    <header class="loginHeader ">
+        <div class="logo row ">
+        {# -------- Logo site -------- #}
+            <div class="contentBooks col-0" id="logo">
+                <a href="{{ path('login') }}" class="logoLink"></a>
+                <i class="fas fa-book-open logoBookOpen"></i>
+                <i class="fas fa-book logoBook1"></i>
+                <i class="fas fa-book logoBook2"></i>
+                <i class="fas fa-book logoBook3"></i>
+            </div>
+            <h2 class="col-12 text-center">LibraryApp</h2>
+        </div>
+    </header>
+      {% if error %}
+        <div class="alert alert-danger text-center">
+            {{ error.messageKey | trans(error.messageData, 'security') }}
+        </div>
+    {% endif %}
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success text-center">
+        {{ message }}
+        </div>
+    {% endfor %}
+    <main class="login">
+        <h1 class="h3 my-4 font-weight-normal">Connexion</h1>
+
+        <form method="post" action="{{ path('login') }}">
+            
+
+            <label for="inputEmail" class="sr-only">Email</label>
+            <input type="email" value="{{ last_username }}" name="_username" id="inputEmail" class="form-control mb-3" placeholder="Email" required autofocus>
+
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" name="_password" id="inputPassword" class="form-control mb-3" placeholder="Password" required>
+
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+            <button class="btn btn-lg" type="submit"> Se connecter</button>
+        </form>
+
+        <a href=" {{ path("register") }} ">Tu n'es pas inscrit ? Par ici !</a>
+    </main>
+</div>
+{% endblock %}

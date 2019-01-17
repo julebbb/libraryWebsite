@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ book.title }} {% endblock %}
+
+{% block body %}
+
+{% include('pages/_header.html.twig') %}
+
+<main class="container showBook">
+
+    <h1 class="mb-3">{{ book.title }}</h1>
+    <section class="d-flex ">
+        <h3>Catégorie : <span class="font-italic font-weight-bold col-12">{{ category.name }}</span></h3>
+        <h3>Ecrit par : <span class="font-italic font-weight-bold col-12">{{ book.author }}</span></h3>
+    </section>
+    <section class="d-flex pt-4">
+        <h4 class="font-weight-bold">Détails :</h4>
+        <button class="btn btnEdit" data-target="#exampleModalCenter" data-toggle="modal" role="button" type="button">Modifier</button>    
+    </section>
+
+    {% include('pages/_form.book.html.twig') %}
+
+
+    <div class="book-content">
+        {% if picture is not null %}
+            <img class="card-img-top" src="{{ picture.src }}" alt="{{ picture.alt }}">
+        {% endif %}
+
+        {% if picture is null %}
+            <img class="card-img-top" src="dist/img/default.jpg" alt="Default picture">
+        {% endif %}
+
+        <h5 class="text-center font-weight-bold pt-2">Date de parution :</h5>
+        <p class="text-center">{{ book.dateRelease|date('d/m/Y') }}</p>
+
+        <h5 class="font-weight-bold pt-2">Résumer :</h5>
+        <p class="text-justify">{{ book.resume }}</p>
+
+        <h5 class="font-weight-bold pt-2">Disponible :</h5>
+
+        {% if book.available %}
+        <p>Oui</p>
+
+        <h5 class="font-weight-bold pt-2">Emprunter :</h5>
+        <form method="post" action="#">
+            <input type="hidden" name="_method" value="UPDATE">
+            <input type="hidden" name="_token" value="{{ csrf_token('UPDATE' ~ book.id) }}">
+            <select name="_id_user">
+                {% for user in users %}
+                <option value="{{ user.id }}">{{ user.firstname }} {{ user.lastname }}</option>
+                {% endfor %}
+            </select>
+            <button class="btn">Valider</button>
+        </form>
+        {% else %}
+
+        <p class="font-weight-bold pt-2">Non. Emprunter par:</p>
+        <a href="#">{{ user.lastname }} {{ user.firstname }}</a>
+
+
+        {% endif %}
+
+         {% include('book/_delete_form.html.twig') %}
+   
+    </div>
+</main>
+{% endblock %}

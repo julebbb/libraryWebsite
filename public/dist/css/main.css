@@ -1,16 +1,162 @@
+
+/*--------------------------------------------------
+----------------------------------------------------
+                    Repete action
+----------------------------------------------------
+--------------------------------------------------*/
+
+/*__________BACKGROUND__________*/
+body, .register button:active, .login button:active,
+.line, .modal-content, .modal-footer .btn:first-child {
+  background: lavender;
+}
+
+#divLoad, #divLoad p {
+  background: #411734;
+}
+
+.login button, .register button,
+.registerHeader, .navSite, .lead button,
+.bookSection .card, .modal-header,
+.modal-footer .btn:last-child, .btnEdit {
+  background: cornflowerblue;
+}
+
+.contentBooks, .register a:active, .jumbotron {
+  background: rgb(81, 45, 64);
+}
+
+.jumbotron .btnCategories, .decorate {
+  background: rgb(145, 174, 212);
+}
+
+/*__________COLOR__________*/
+.register a:active, .login button,
+.register button, .fa-book-open, .logoBook3,
+.register a:active, .navSite li, .navSite li a,
+.on_top .fas, .jumbotron, .lead button, .bookSection a,
+.modal-footer .btn:last-child, .btnEdit {
+  color: lavender;
+}
+
+.logoBook1, .login a, .modal-footer .btn:first-child, .showBook h3 {
+  color: cadetblue;
+}
+
+.register button:active, .login button:active, .register h1, .login h1, .showBook p {
+  color: cornflowerblue;
+}
+
+.loginHeader h2, .registerHeader h2 {
+  color: #411734;
+}
+
+.register a, .headerIndex .logo p, .navSite li a:hover,
+.jumbotron .btnCategories, .modal-content, body   {
+  color: rgb(81, 45, 64);
+}
+
+/*__________WIDTH / HEIGHT__________*/
+body, html, .registerHeader .logo, .logoLink,
+.register input, .registerHeader, .login input,
+.login, .login form, .navSite ul, .navSite li a,
+.modal-dialog, .modal-dialog form   {
+    width: 100%;
+}
+
+html, #divLoad, .darkDiv {
+  height: 100vh;
+}
+
+.loading, .contentBooks {
+  width: 100px;
+  height: 100px;
+}
+
+/*__________FLEX OPTIONS__________*/
+#divLoad, .registerHeader .logo, .registerHeader, .login
+.loginBody, .navSite, .on_top, .modal-footer  {
+  justify-content: center;
+}
+
+.registerHeader .row, #divLoad, .login, .headerIndex,
+.on_top {
+  align-items: center;
+}
+
+#divLoad, .loginBody, .login, .headerIndex .logo  {
+  flex-direction: column;
+}
+
+/*__________POSITION__________*/
+.fa-book-open, .logoBook1, .logoBook2, .logoBook3, .line,
+.navSite, .close, .darkDiv, .decorate {
+  position: absolute;
+}
+
+/*__________MARGIN__________*/
+.line, .register a, .register form, .login button,
+.navSite li:last-of-type a:last-of-type,
+.modal-dialog form .modal-title, .modal-dialog form   {
+  margin: auto;
+}
+
+.jumbotron, .bookSection, .modal-dialog,
+.modal-dialog .modal-body label {
+  margin: 0;
+}
+
+/*__________PADDING__________*/
+.modal-body input, .modal-body textarea,
+.navSite li:last-of-type a:last-of-type, .modal-dialog .modal-body div {
+  padding: 0.5em;
+}
+
+/*__________DISPLAY__________*/
+html, #divLoad, .registerHeader, .login,
+.loginBody, .index .buttonJumbotron,
+.headerIndex, .navSite, .jumbotron .btnCategories
+{
+  display: flex;
+}
+
+.darkDiv, .close, .navSite ul, .on_top {
+  display: none;
+}
+
+.line, .logoLink, .register button, .register a,
+.login button, .navSite li a {
+  display: block;
+}
+
+/*__________TRANSITION__________*/
+#divLoad, .line, .register a, .navSite li a, .cardBook  {
+  transition: 0.25s linear;
+}
+
+#divLoad p, .fa-book-open  {
+  transition: 0.5s linear;
+}
+
+/*__________TEXT ALIGN__________*/
+.register h1, .login h1, .navSite ul {
+  text-align: center;
+}
+
+.register button:active, .login button:active {
+    border: 1px solid cornflowerblue;
+}
+
+
+
+
 /*==================================================
-                    Keyframes 
+                    Keyframes
 ===================================================*/
 
 @keyframes rotate {
-
-    from {
-        transform: rotate(90deg);
-    }
-
-    to {
-        transform: rotate(460deg);
-    }
+    from {transform: rotate(90deg);}
+    to {transform: rotate(460deg);}
 }
 
 @keyframes boing1 {
@@ -30,20 +176,14 @@
 }
 
 @keyframes bookopen {
-    0% {
-        color: white;
-    }
+    0% {color: white;}
+    50% {color: lightsteelblue;}
+    100% {color: cadetblue;}
+}
 
-    50% {
-        color: lightsteelblue;
-
-
-    }
-
-    100% {
-        color: cadetblue;
-
-    }
+@keyframes onTop {
+    from { bottom: 1em;}
+    to { bottom: 2em;}
 }
 
 
@@ -53,16 +193,10 @@
 
 /*Container*/
 #divLoad {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; 
+    position: fixed;
     width: 100vw;
-    height: 100vh;
     top: 0;
     left: 0;
-    background: #411734;
     z-index: 120;
 }
 
@@ -70,71 +204,60 @@
  #divLoad p {
      color: white;
      text-shadow: 0px 0px 3px white;
-     background: #411734;
      z-index: 1;
      padding: 7px;
-     transition: 0.5s linear;
  }
 
-/*Transition element*/
- #divLoad {
-     transition: 2s linear;
- }
 
- .line {
-     transition: 1s linear;
- }
 
 /*Icon animations Logo*/
 .fa-book-open {
-    position: absolute;
     bottom: -4px;
     font-size: 55px;
     transform: skew(7deg);
     right: 14px;
-    animation: 3s infinite ease bookopen alternate;
-    transition: 1s ease;
     z-index: 8;
 }
 
-.book1 {
-    position: absolute;
+.bookOpen {
+    animation: 3s infinite ease bookopen alternate;
+}
+
+.logoBook1 {
     top: 12px;
     left: 50px;
     font-size: 50px;
     left: 0;
     transform: rotate(-20deg);
-    color: cadetblue;
+}
+
+.book1, .book2 {
     animation: 2s linear infinite boing1;
 }
 
-.book2 {
-    position: absolute;
-    top: 11px;
+.book3 {
+    animation: 2s linear infinite boing2;
+}
+
+.logoBook2 {
+    top: 12px;
     right: 0;
-    animation: 2s linear infinite boing1;
-    animation-delay: 2s;
+    animation-delay: 1s;
     transform: rotate(10deg);
     font-size: 40px;
     color: rgb(145, 174, 212);
 }
 
-.book3 {
-    position: absolute;
+.logoBook3 {
     top: 0px;
     font-size: 48px;
-    animation: 2s linear infinite boing2;
     animation-delay: 1s;
     transform: rotate(-5deg);
     left: 30px;
-    color: lavender;
 }
 
 .contentBooks {
-    background: rgb(81, 45, 64);
-    width: 100px;
     position: relative;
-    height: 102px;
     border-radius: 60px;
 }
 
@@ -142,16 +265,586 @@
     height: 0;
     width: 2px;
     border-radius: 27px;
-    position: absolute;
-    display: block;
-    margin: auto;
-    background: wheat;
 }
 
 .loading {
     border-top: 2px solid white;
     animation: 1s infinite linear rotate;
     border-radius: 100px;
-    width: 100px;
-    height: 100px;
+}
+
+/*==================================================
+                    Register page
+===================================================*/
+
+/*-------------  Logo  ---------------*/
+.registerHeader .contentBooks, .headerIndex .contentBooks {
+    width: 80px;
+    height: 80px;
+    z-index: 3;
+}
+
+.registerHeader .logoBook3, .headerIndex .logoBook3 {
+    left: 25px;
+}
+
+.registerHeader .logoBook2, .headerIndex .logoBook2 {
+    font-size: 30px;
+}
+
+.registerHeader .logoBook1,
+.registerHeader .logoBook3,
+.headerIndex .logoBook3,
+.headerIndex .logoBook1 {
+    font-size: 35px;
+}
+
+.registerHeader .logoBookOpen,
+.headerIndex .logoBookOpen {
+    font-size: 40px;
+}
+
+
+.registerHeader .logo, .headerIndex .logo {
+    margin: 10px;
+}
+
+.logoLink {
+    height: 100%;
+    z-index: 200;
+    position: relative;
+}
+/*------------------------------------*/
+
+.register {
+    flex: 1;
+}
+
+.registerHeader h2 {
+    font-weight: bold;
+    font-size: 1.3rem;
+
+}
+
+.registerHeader {
+    overflow: hidden;
+    box-shadow: 0px 2px 1px rgba(81, 45, 64, 0.5);
+}
+
+.register h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.register input {
+    padding: 5px;
+}
+
+.register button {
+    font-weight: bold;
+    margin: 10px auto;
+}
+.register button, .register a {
+    padding: 10px;
+}
+.register a {
+    font-size: 0.8rem;
+    border: 1px solid rgb(81, 45, 64);
+    width: 5rem;
+}
+
+.register a:active {
+    border: 1px solid lavender;
+}
+
+
+
+.register form {
+    max-width: 220px;
+}
+
+.register label {
+    margin: 5px 0;
+    color:rgb(81, 45, 64);
+}
+
+/*==================================================
+                    Login page
+===================================================*/
+.loginBody {
+    height: 100%;
+    overflow: hidden;
+}
+
+
+.loginHeader .contentBooks {
+    margin: 0.5rem auto;
+}
+
+.login {
+    padding: 0 1.3rem;
+    margin: 0 auto;
+}
+
+.login input {
+    padding: 1.5rem;
+}
+
+.login a {
+    align-self: flex-end;
+    margin-top: 1rem;
+}
+
+/*==================================================
+                    Index page
+===================================================*/
+
+
+.index .buttonJumbotron {
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.headerIndex {
+    transition: ease 1s;
+    overflow: hidden;
+}
+
+.headerIndex .logoLink {
+    height: 130%;
+    transition: ease 1s;
+
+}
+
+.headerIndex .logo {
+    transition: ease 1s;
+    z-index: 5;
+
+}
+
+.headerIndex .logo p {
+    font-weight: bold;
+    z-index: 60;
+}
+
+.headerIndex h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 5px;
+    text-align: right;
+    color:rgb(81, 45, 64);
+}
+
+.navSite {
+    width: 320px;
+    height: 300px;
+    left: -235px;
+    transform: skew(-44deg);
+    z-index: 2;
+    transition: 1s ease;
+    align-items: flex-end;
+}
+
+.navSite ul {
+    opacity: 0;
+    transition: 1s ease;
+    padding: 0 2em;
+    list-style: none;
+}
+
+.navSite li:first-child {
+    border-bottom: 1px solid lavender;
+}
+
+.navSite li a {
+    padding: 1em;
+    text-decoration: none;
+}
+
+.navSite li:nth-child(2) {
+    margin: 0 0 1em 0;
+}
+
+.navSite li:last-of-type a:last-of-type {
+    border: 1px solid lavender;
+    border-radius: 5px;
+    width: 12em;
+}
+
+.navSite li:last-of-type a:last-of-type:hover {
+    border: 1px solid rgb(81, 45, 64);
+
+}
+
+.close {
+    transition: 1s linear;
+    top: 1rem;
+    opacity: 0;
+    right: 1rem;
+
+    font-size: 2em;
+    z-index: 1;
+}
+
+.on_top {
+    position: fixed;
+    bottom: 1em;
+    width: 50px;
+    height: 50px;
+    color: black;
+    right: 7em;
+    background: cadetblue;
+    z-index: 20;
+    border-radius: 49px;
+    transition: 0.5s ease;
+}
+
+.on_top:hover {
+    text-decoration: none;
+    animation: 0.5s linear alternate infinite onTop;
+}
+
+.on_top .fas {
+    font-size: 2em;
+}
+
+.darkDiv {
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.decorate {
+    width: 160px;
+    height: 50vh;
+    transition: 1s ease;
+    transform: skew(-51deg);
+    left: -35px;
+}
+
+.jumbotron {
+    border-radius: 0;
+    box-shadow: 0px -2px 0px rgb(145, 174, 212);
+}
+
+.jumbotron p,
+.jumbotron .btnCategories {
+    font-size: 0.8rem;
+
+}
+
+.jumbotron .label {
+    margin: 20px 0 0 0;
+}
+
+.jumbotron h1 {
+    font-size: 2rem;
+}
+
+.jumbotron .btnCategories {
+  margin-right: 20px;
+  border: 2px solid rgb(81, 45, 64);
+  font-weight: bold;
+}
+
+.jumbotron .btnCategories::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f150";
+  font-size: 1.5rem;
+
+}
+
+.lead button, .btnEdit {
+  border: 2px solid rgb(81, 45, 64);
+  padding: 0.5rem 1.5rem;
+}
+
+.bookSection .card {
+  padding: 0;
+}
+
+.bookSection {
+  padding: 2em;
+}
+
+.bookSection a:hover {
+    text-decoration: none;
+}
+
+/*==================================================
+                    Add modal page
+===================================================*/
+
+.modal-dialog form {
+    max-width: 500px;
+}
+
+.modal-dialog form .modal-title {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.modal-dialog .modal-body div {
+    padding: 0.5em;
+}
+
+.modal-dialog .modal-body {
+    padding: 0 2rem;
+}
+
+.modal-body select {
+  padding: 0.7em;
+}
+
+.modal-header {
+  border-bottom: 2px solid cadetblue;
+}
+
+.modal-body input[type='text'],
+.modal-body select,
+.modal-body textarea,
+.modal-body input[type='date'] {
+  border-radius: 5px;
+  background: rgba(145, 174, 212, 0.2);
+  border: 1px solid rgb(145, 174, 212);
+}
+
+.modal-footer .btn:first-child {
+  border: 1px solid cadetblue;
+}
+
+.modal-footer .btn:last-child {
+  border: 1px solid lavender;
+  padding: 0.8rem;
+}
+
+/*==================================================
+                    Book detail page
+===================================================*/
+.showBook {
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+}
+
+.showBook h1 {
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.showBook h3 {
+    font-size: 1em;
+}
+
+.showBook h3:last-of-type {
+    text-align: right;
+}
+
+.showBook .d-flex {
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid cadetblue;
+    padding-bottom: 1em;
+}
+
+.btn-danger {
+    padding: 0.5em 2em;
+}
+
+
+/*#####################################################
+#######################################################
+
+                    MEDIA QUERIES
+
+#######################################################
+#######################################################*/
+
+
+
+
+@media (min-width: 576px) {
+
+    .register form, .login {
+        max-width: 400px;
+    }
+
+    .registerHeader {
+        margin: 0;
+    }
+
+    .modal-dialog {
+        margin: auto;
+    }
+
+    .registerHeader h2 {
+        font-size: 1.5rem;
+    }
+
+    .register h1 {
+        font-size: 1.7rem;
+        margin: 2rem;
+    }
+
+    .register button {
+        padding: 1rem 3rem;
+        margin: 2rem auto;
+    }
+
+    .register input {
+        margin-bottom: 2rem;
+    }
+
+
+     .headerIndex h3 {
+         font-size: 1.3rem;
+         z-index: 1;
+         text-align: center;
+         position: absolute;
+     }
+
+     .modal-dialog .modal-body {
+         padding: 0 3em;
+     }
+
+     .formDiv {
+         flex-wrap: nowrap;
+     }
+
+     .modal-dialog form .modal-title {
+        padding: 0 1em;
+     }
+
+     .jumbotron .btnCategories {
+         font-size: 1em;
+     }
+
+     .lead button, .btnEdit {
+         font-size: 1.7em;
+     }
+}
+
+ @media (min-height: 638px) {
+
+     .modal-dialog  {
+         height: 100vh;
+     }
+}
+
+@media (min-width: 768px) {
+
+    .register form, .login {
+        max-width: 600px;
+    }
+
+    .headerIndex h3 {
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    .navSite li a {
+        font-size: 1.1em;
+    }
+
+    .jumbotron .btnCategories {
+        font-size: 1.1em;
+    }
+
+    .jumbotron .label {
+        font-size: 1em;;
+    }
+
+}
+
+
+@media (min-width: 992px) {
+
+    .navSite ul, .navSite li:last-of-type  {
+      display: flex;
+    }
+
+    .navSite, .decorate {
+        width: 100%;
+    }
+
+    .register input {
+        padding: 0.8rem;
+    }
+
+    .register a {
+        margin-bottom: 0.5rem;
+    }
+
+    .headerIndex {
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+    .headerIndex p {
+        display: none;
+    }
+
+
+    .headerIndex h3 {
+        font-size: 1.6rem;
+    }
+    .navSite {
+        height: 130px;
+        transform: skew(0);
+        left: 0;
+        z-index: 1;
+        top: 0;
+        align-items: flex-start;
+        padding: 10px;
+
+    }
+
+    .navSite ul {
+        opacity: 1;
+        padding: 0 1em 0 7em;
+        z-index: 3;
+        justify-content: flex-start;
+    }
+
+    .navSite li:first-child {
+        border-bottom: none !important;
+        border-right: 1px solid aliceblue;
+    }
+
+    .navSite li:first-child, .navSite li:nth-child(2) {
+        margin: auto;
+    }
+
+    .navSite li:first-child,
+    .navSite li:nth-child(2),
+    .navSite li:last-of-type a:last-of-type {
+        font-size: 0.9em;
+    }
+
+    .navSite li:last-of-type {
+        flex: 1;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .navSite li:last-of-type a:last-of-type {
+        margin: 0;
+    }
+
+    .decorate {
+        z-index: 0;
+        left: 0;
+
+        height: 140px;
+        transform: skew(0);
+
+    }
+
+    .jumbotron .btnCategories:hover, .lead button:hover, .btnEdit:hover {
+        box-shadow: 0px 0px 10px rgb(81, 45, 64) inset;
+        color: rgb(81, 45, 64);
+    }
 }

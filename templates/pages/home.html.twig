@@ -1,9 +1,58 @@
 {% extends "base.html.twig" %}
 
-{% block title 'Bienvenue' %}
+{% block title  %} Bienvenue {{ app.user.name }} {% endblock %}
 
 {% block body %}
-{{ include("loadPage.html.twig") }}
 
+{% include('pages/_header.html.twig') %}
+
+<main class="index">
+
+<a href="#" class="on_top" title="Revenir en haut">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<div class="jumbotron">
+    <h1 class="display-5 text-center">Tous les livres :</h1>
+    <p class="label">Trier par catégorie :</p>
+    <div class="buttonJumbotron">
+        <button class="btn btnCategories">Catégories (indisponible)</button>
+        <p class="lead">
+        <button class="btn" data-target="#exampleModalCenter" data-toggle="modal" role="button" type="button">Ajouter</button>
+        </p>
+    </div>
+</div>
+
+{% include('pages/_form.book.html.twig') %}
+
+<section class="bookSection row">
+{% for book in books %}
+    
+    {% for category in categories %}
+
+    <div class="card cardBook text-left col-12 col-sm-6 col-md-3">
+        <a href="{{ path('book_show', {id: book.id}) }}" class="linkBook">
+    
+        {% for picture in pictures %}  
+    
+        {% if picture.src is not null %}
+            <img class="card-img-top" src="{{ picture.src }}" alt="{{ picture.alt }}">
+        {% endif %}
+
+        {% if picture.src is null %}
+            <img class="card-img-top" src="dist/img/default.jpg" alt="Default picture">
+        {% endif %}
+
+        {% endfor %}
+      <div class="card-body">
+        <h4 class="card-title">{{ book.title }}</h4>
+
+      </div>
+      </a>
+    </div>
+    {% endfor %}
+{% endfor %}
+</section>
+</main>
 
 {% endblock %}

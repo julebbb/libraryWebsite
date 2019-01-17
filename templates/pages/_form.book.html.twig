@@ -1,0 +1,46 @@
+
+<!-- Button trigger modal -->
+<!-- Modal -->
+<section aria-hidden="true" aria-labelledby="exampleModalCenterTitle" class="modal fade" id="exampleModalCenter" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        {{ form_start(form) }}
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle"> 
+                    {% if title == 'index' %}
+                    Ajouter un livre :
+                    {% elseif title == 'book' %}
+                    Modifier un livre :
+                    {% elseif title == 'userIndex' %}
+                    Ajouter un Utilisateur :
+                    {% elseif title == 'user' %}
+                    Modifier un Utilisateur :
+                    {% endif %}
+                </h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body container">
+                    {{ form_row(form.title) }} 
+                    {{ form_row(form.author) }}
+                    <div class="row formDiv">
+                        {{ form_row(form.category) }} 
+                        {{ form_row(form.date_release) }}
+                    </div>
+                    {{ form_row(form.resume) }} 
+                    {{ form_row(form.picture) }}
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" type="button">Annuler</button>
+                <button type="submit" class="btn">Sauvegarder</button>
+            </div>
+
+        </div>
+            {{ form_end(form) }}
+
+    </div>
+</section>
+
+    
+    
