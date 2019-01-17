@@ -10,11 +10,14 @@ let blueBlock = $(".decorate");
 
 //Loading page animation
 jQuery(document).ready(function ($) {
+
+    //Animation open 
     line.css('height', '100vh');
     line.css('border-radius', '0');
 
     paragraph.css("opacity", 0);
 
+    //Change loading to ready when page are load
     if (paragraph.css("opacity", 0)) {
 
         setTimeout(function () {
@@ -23,12 +26,16 @@ jQuery(document).ready(function ($) {
         }, 200);
     }
 
+    //Open page and remove loading page when it's done
     if (line.css('height', '100vh')) {
+
         setTimeout(function () {
             line.css('width', '100vw');
             paragraph.css('background', 'transparent')
             divLoad.css('opacity', 0);
+
             if (divLoad.css('opacity', 0)) {
+
                 setTimeout(function () {
                     divLoad.remove();
 
@@ -39,12 +46,14 @@ jQuery(document).ready(function ($) {
 
     }
 
+    //Active a animation like in load page when mouse is on logo
     $('.logoLink').hover(function () {
         $('.logoBook1').css("animation", "2s linear infinite boing1");
         $('.logoBook2').css("animation", "2s linear infinite boing1");
         $('.logoBook3').css("animation", "2s linear infinite boing2");
         $('.logoBookOpen').css("animation", "3s infinite ease bookopen alternate")
     });
+    //Remove animation when is out
     $('.logoLink').mouseout(function () {
         $('.logoBook1').css("animation", "");
         $('.logoBook2').css("animation", "");
@@ -53,12 +62,13 @@ jQuery(document).ready(function ($) {
 
     });
 
+    //When window is less than 992 px
+    if (window.innerWidth < 992) {      
     
-    if (window.innerWidth < 992) {
-        
-    
+        //If click in logo dropdown of menu appear
         $('#logoLink').click(function() {
 
+            //Display menue
             $(".navSite, .decorate").css({
                 "transform": "skew(0deg)",
                 "height": "20em",
@@ -68,9 +78,9 @@ jQuery(document).ready(function ($) {
             });
             $('.headerIndex').css("align-items", "baseline");
 
-
-
+            //Display div and button who we can return to index if they click on
             darkDiv.css('display', 'block');
+            $('.close').css("display", "block");
 
             $('.navList').css("display", "block");
             $('#logo').css("margin", "auto");
@@ -80,8 +90,8 @@ jQuery(document).ready(function ($) {
                 "margin": "10px 0",
                 'position': 'fixed',
             });
-            $('.close').css("display", "block");
 
+            //Fade in animation
             setTimeout(function () {
                 $('.navList').css("opacity", "1");
                 $('.close').css("opacity", "1");
@@ -89,6 +99,8 @@ jQuery(document).ready(function ($) {
             }, 1000);
 
         });
+
+        //Remove dropdown
         $('.darkDiv, .close').click(function() {
             navSite.css({
                 "transform": "skew(-44deg)",
@@ -98,8 +110,8 @@ jQuery(document).ready(function ($) {
 
             });
 
-                
             $('.headerIndex').css("align-items", "center");
+
             blueBlock.css({
                 "transform": "skew(-51deg)",
                 "left": "-35px",
@@ -107,14 +119,17 @@ jQuery(document).ready(function ($) {
                 "height": "50vh",
                 "position": "absolute"
             })
+
             darkDiv.css('display', 'none');
             $('.navList').css("opacity", "0");
             $(".close").css("display", "none")
+
             logoDiv.css({
                 "margin": "10px",
                 "position": "initial",
                 "opacity": "0"
             });
+
             $('.close').css("opacity", "0");
             
 
@@ -130,6 +145,7 @@ jQuery(document).ready(function ($) {
             
             let scroll = window.scrollY;
 
+            //When menu is not visible a button on top appear
             if (scroll > 300) {
                 $(".on_top").css("display", "flex");
             } else {
@@ -138,6 +154,8 @@ jQuery(document).ready(function ($) {
         });
     
 } else {
+
+    //Animation for reduce element when they are hover in book element
     $('.linkBook').hover(function() {
         $('.cardBook').css("transform", "scale(0.98)")
     });

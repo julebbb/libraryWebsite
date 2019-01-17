@@ -3,8 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Book;
-use App\Form\Book1Type;
-use App\Repository\BookRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,29 +13,6 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class BookController extends AbstractController
 {
-    /**
-     * @Route("/new", name="book_new", methods={"GET","POST"})
-     */
-    public function new(Request $request): Response
-    {
-        $book = new Book();
-        $form = $this->createForm(Book1Type::class, $book);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($book);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('book_index');
-        }
-
-        return $this->render('book/new.html.twig', [
-            'book' => $book,
-            'form' => $form->createView(),
-        ]);
-    }
-
     /**
      * @Route("/{id}", name="book_show", methods={"GET"})
      */
